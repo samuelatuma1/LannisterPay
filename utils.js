@@ -75,7 +75,7 @@ function SplitEntity(entity) {
         const ratioValue = totalRatio > 0 ?
                         (split["SplitValue"] / totalRatio) * amtLeft : 0
         if(ratioValue < 0){
-            return {error : "Amount cannot be negative"}
+            return {err : "Amount cannot be negative"}
         }
         balance -= ratioValue
         
@@ -94,7 +94,7 @@ function SplitEntity(entity) {
     }
     if(splitResult.length < 1 || splitResult.length > 20){
         return {
-            error: "array can contain a minimum of 1 split entity and a maximum of 20 entities"
+            err: "array can contain a minimum of 1 split entity and a maximum of 20 entities"
         }
     }
     return {ID: ID, Balance: balance, SplitBreakdown: splitResult};
